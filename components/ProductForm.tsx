@@ -29,6 +29,10 @@ export default function ProductForm() {
                 }
                 setCounter(currentValue => currentValue + 1)
                 addProduct(newProduct)
+
+                inputDescription.current.value = ''
+                inputName.current.value = ''
+                inputQuant.current.value = ''
             }}>add</button>
         </form>
     )

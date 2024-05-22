@@ -13,6 +13,7 @@ export default function Products() {
                 <div className="text-white" key={product.id}>
                     <h1>Nome do Produto: {product.name}</h1>
                     <p>Descrição do Produto: {product.description}</p>
+                    <p>Quantidade do Produto: {product.quantity}</p>
                     <button className="border-2 p-1 rounded-md hover:bg-cyan-500 hover:border-cyan-500 duration-150" type="button" onClick={() => removeProduct(Number(product.id))}>Remover</button>
                     <Link href={`/products/${product.id}`}>Editar</Link>
                 </div>
