@@ -6,7 +6,6 @@ import Link from "next/link"
 export default function Products() {
     const { products, removeProduct } = useProducts()
 
-
     return (
         <section className="text-white gap-5 flex flex-col px-24 pt-10">
             <h1 className="text-2xl">Lista de Produtos</h1>
