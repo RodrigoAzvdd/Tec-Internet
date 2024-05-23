@@ -1,11 +1,13 @@
 'use client'
 
 import { ProductType, useProducts } from "@/hooks/UseProducts";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function UpdateProductForm({ product }: { product: ProductType }) {
     const { updateProduct } = useProducts();
     const [formState, setFormState] = useState<ProductType>(product);
+    const router = useRouter()
 
     useEffect(() => {
         if (product) {
@@ -26,6 +28,8 @@ export default function UpdateProductForm({ product }: { product: ProductType })
         if (formState) {
             updateProduct(formState);
         }
+        router.push('/products')
+
     };
 
     return (
@@ -61,7 +65,7 @@ export default function UpdateProductForm({ product }: { product: ProductType })
                 className="border-2 p-1 rounded-md hover:bg-cyan-500 hover:border-cyan-500 duration-150"
                 type="submit"
             >
-                Update
+                Editar
             </button>
         </form>
     );
