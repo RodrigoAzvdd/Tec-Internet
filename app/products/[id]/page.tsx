@@ -7,12 +7,12 @@ import { useEffect, useState } from "react";
 
 export default function Page({ params }: { params: { id: string } }) {
     const { products } = useProducts();
-    const [productToUpdate, setProductToUpdate] = useState<ProductType | undefined>(undefined);
+    const [productToUpdate, setProductToUpdate] = useState<ProductType>({} as ProductType);
     const router = useRouter()
 
     useEffect(() => {
         const product = products.find((product: ProductType) => product.id === Number(params.id));
-        if (!product) {
+        if (!product || product == undefined) {
             router.push('/products')
         } else {
             setProductToUpdate(product);
